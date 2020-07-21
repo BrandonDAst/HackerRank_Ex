@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gvNdu4KQi4BEMU+sE718P4rqxFNrZpUvYtfugAcjfNdpdAdW/z7ll/TgCnXdtWCAUMCtjfrMhhMSGDizJliK4g==",
+  "dgSpecHash": "pqnGtSttXpAclajCJPUTPA/5rOvmB5ruWfGaq57P3Dc2T6vtDbuW5cD9AOZko9Ye73HkiWI7Ro/zVG0w3vtyvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Trabajo\\source\\repos\\HackerRank_Ex\\HackerRank_Ex\\HackerRank_Ex.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\Trabajo\\Documents\\Git\\HackerRank_Ex\\HackerRank_Ex\\HackerRank_Ex.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Trabajo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

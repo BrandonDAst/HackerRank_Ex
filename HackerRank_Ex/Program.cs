@@ -3,6 +3,7 @@ using textWriter = System.Console;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace HackerRank_Ex
 {
@@ -16,10 +17,79 @@ namespace HackerRank_Ex
             SockMerchant sock = new SockMerchant();
             //SockMerchant.Run();
             //CountingValleys.Run();
-            JumpingOnClouds.Run();
+            //JumpingOnClouds.Run();
+            RepeatedString.Run();
         }
     }
+    public class RepeatedString
+    {
+        static public void Run()
+        {
+            string s = "a";
+            long n = 1000000000000;
+            //long result = repeatedString(s, n);
+            long result = repeatTwo(s, n);
 
+            textWriter.WriteLine(result);
+            
+        }
+        static public int  repeatedString(string s, long n)
+        {
+            int aOnInput = 0;
+            foreach (var letter in s.ToCharArray()) if (letter.Equals('a')) aOnInput++;
+            long inputLength = s.Length;
+
+            int aOnInfInput = 0;
+            long infLength = inputLength;
+            
+                        
+            while (true)
+            {
+                if (infLength < n)
+                {
+                    infLength = infLength + inputLength;
+                    aOnInfInput = aOnInfInput + aOnInput;
+                }
+                else
+                {
+                    int diff = (int)(infLength - n);
+
+                    var remChars = s.ToCharArray(0, (int)(inputLength - diff));
+                    var remAs = 0;
+                    foreach (var letter in remChars) if (letter.Equals('a')) remAs++;
+                    aOnInfInput = aOnInfInput + remAs;
+                    break;
+                }
+            }
+            
+            return aOnInfInput;
+        }
+        static public int repeatTwo(string s, long n)
+        {
+            List<char> letters = new List<char>(s);
+            long inputLength = letters.Count;
+            int aCounter = 0;
+            while (true)
+            {
+                if (inputLength < n)
+                {
+                    letters.AddRange(letters);
+                    inputLength = letters.Count;
+                }
+                else                
+                  break;                
+            }
+
+            long count = 1;
+            foreach (var letter in letters)
+            {
+                if (count > n) break;
+                if (letter.Equals('a')) aCounter++;
+                count++;
+            }
+            return aCounter;
+        }
+    }
     public class SockMerchant
     {
         static public void Run()
